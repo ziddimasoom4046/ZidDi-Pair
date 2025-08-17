@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Add this inside the <head> tag -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <title>UMAR QR - Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(-45deg, #2278f3, #1a5fd6, #1c3ab2, #163a91);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: white;
+  padding: 40px 20px;
+  flex-direction: column;
+}
+
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 330px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .card h2 {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #e0e0e0;
+    }
+
+    .qr {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      border: 3px solid #ffffff44;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    .reload-btn {
+      background: #3ac569;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .reload-btn:hover {
+      background: #2fa758;
+    }
+
+    /* Back button */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: 10;
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    /* floating blob */
+    .floating-blob {
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #3ac569, #2278f3);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes blobFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(20deg); }
+    }
+
+    /* Footer with email contact */
+    .footer {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a0c4ff;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(34, 120, 243, 0.7);
+  user-select: none;
+}
+
+
+    .footer a {
+      color: #a0c4ff;
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .card {
+        width: 90vw;
+      }
+      .reload-btn {
+        padding: 12px 24px;
+      }
+      .back-btn {
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+        padding: 12px 20px;
+      }
+    }
+@media (max-width: 600px) {
+  .footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+
+ <div class="card">
+  <h2>Scan to Connect</h2>
+  <p>Open WhatsApp and scan the QR Code</p>
+
+  <!-- Lottie QR Animation -->
+  <lottie-player
+    src="https://assets10.lottiefiles.com/private_files/lf30_wqypnpu5.json"
+    background="transparent"
+    speed="1"
+    style="width: 160px; height: 160px; margin: auto; margin-bottom: 20px;"
+    loop autoplay>
+  </lottie-player>
+
+  <img src="/server" alt="QR Code" class="qr" />
+
+  <a href="javascript:location.reload()" class="reload-btn">Reload QR</a>
+
+  <!-- Guide Section -->
+  <div style="text-align:left; margin-top: 20px;">
+    <h3 style="font-size: 1rem; margin-bottom: 8px;">📱 How to Scan:</h3>
+    <ol style="font-size: 0.9rem; padding-left: 18px; color: #e0e0e0;">
+      <li>Open WhatsApp on your phone</li>
+      <li>Tap <strong>Menu (⋮)</strong> or <strong>Settings</strong></li>
+      <li>Go to <strong>Linked Devices</strong></li>
+      <li>Tap <strong>Link a Device</strong></li>
+      <li>Scan the QR shown above</li>
+    </ol>
+  </div>
+</div>
+
+
+  <div class="floating-blob"></div>
+
+  <div class="footer">
+    If you see the problem, tell us at <a href="mailto:session@cravo.live">session@cravo.live</a>
+  </div>
+</body>
+</html>

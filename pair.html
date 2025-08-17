@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UMAR PAIR</title>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+  <style>
+    body {
+      background: #0d1117;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #a0c4ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .glassy {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      max-width: 400px;
+      width: 90%;
+      margin-top: 3rem;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    }
+
+    h2 {
+      color: #59aaff;
+      margin-bottom: 0.2rem;
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      color: #87adff;
+    }
+
+    #number {
+      width: 100%;
+      height: 48px;
+      font-size: 1rem;
+      padding-left: 90px !important;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      color: #000 !important;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+      font-weight: 600;
+    }
+
+    .intl-tel-input {
+      width: 100%;
+    }
+
+    .intl-tel-input .selected-flag {
+      background: transparent !important;
+      padding-left: 12px !important;
+      height: 48px !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background: linear-gradient(90deg, #2278f3, #59aaff);
+      border: none;
+      padding: 0.75rem 0;
+      width: 100%;
+      color: white;
+      font-weight: 900;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #59aaff, #2278f3);
+    }
+
+    #pair {
+      margin-top: 1rem;
+      font-weight: 800;
+      color: #ff6b6b;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ffffffcc;
+    }
+
+    .footer a {
+      color: #59aaff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .guide {
+      max-width: 600px;
+      width: 90%;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border-left: 5px solid #59aaff;
+      box-shadow: 0 0 15px rgba(89, 170, 255, 0.3);
+    }
+
+    .guide h3 {
+      color: #59aaff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .guide ol {
+      padding-left: 1.2rem;
+      color: #fff;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .glassy, .guide {
+        padding: 1.2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="back-btn">← Back</a>
+
+  <div class="glassy">
+    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_zrqthn6o.json" background="transparent" speed="1" style="width: 150px; height: 150px; margin: 0 auto 1rem;" loop autoplay></lottie-player>
+    <h2>UMAR PAIR</h2>
+    <p>PLEASE ENTER YOUR NUMBER</p>
+    <input id="number" type="tel" placeholder="Enter phone number" />
+    <button id="submit">ENTER</button>
+    <main id="pair"></main>
+  </div>
+
+  <!-- Guide Section -->
+  <div style="text-align:left; margin-top: 20px;">
+    <h3 style="font-size: 1rem; margin-bottom: 8px;">📱 How to Pair:</h3>
+    <ol style="font-size: 0.9rem; padding-left: 18px; color: #e0e0e0;">
+      <li>Open WhatsApp on your phone</li>
+      <li>Tap <strong>Menu (⋮)</strong> or <strong>Settings</strong></li>
+      <li>Go to <strong>Linked Devices</strong></li>
+      <li>Tap <strong>Link a Device</strong></li>
+      <li>Tap <strong>Link with phone number instead</strong></li>
+      <li>Paste & Enter Code</li>
+    </ol>
+  </div>
+</div>
+
+  <div class="footer">
+     If you see the problem, tell us at <a href="mailto:session@cravo.live">session@cravo.live</a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    const input = document.querySelector("#number");
+    const iti = window.intlTelInput(input, {
+      separateDialCode: true,
+      preferredCountries: ["pk", "hk"],
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    const pair = document.getElementById("pair");
+    const submitBtn = document.getElementById("submit");
+
+    async function Copy() {
+      const copyEl = document.getElementById("copy");
+      const text = copyEl.innerText;
+      await navigator.clipboard.writeText(copyEl.innerText.replace("CODE: ", ""));
+      copyEl.innerText = "COPIED";
+      copyEl.style.color = "#59aaff";
+      copyEl.style.fontWeight = "bold";
+      setTimeout(() => {
+        copyEl.innerText = text;
+        copyEl.style.color = "#ff6b6b";
+      }, 1000);
+    }
+
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const rawNumber = iti.getNumber().replace(/[^0-9]/g, "");
+      if (!rawNumber || rawNumber.length < 11) {
+        pair.innerHTML = '<a style="color:#ff6b6b; font-weight:bold;">❌ Invalid number format ❌</a><br><br>';
+        return;
+      }
+
+      pair.innerHTML = '<a style="color:#59aaff; font-weight:bold;">GENERATING YOUR CODE</a><br><br>';
+
+      try {
+        const { data } = await axios(`/code?number=${rawNumber}`);
+        const code = data.code || "Service Unavailable";
+        pair.innerHTML = `<div id="copy" onclick="Copy()" style="cursor:pointer; color:#ff6b6b; font-weight:bold; font-size:1.2rem;">CODE: <span style="color:#1a2a6c; font-weight:900;">${code}</span></div>`;
+      } catch (err) {
+        pair.innerHTML = '<a style="color:red; font-weight:bold;">❌ Server Error or Invalid Response ❌</a>';
+      }
+    });
+  </script>
+</body>
+</html>
